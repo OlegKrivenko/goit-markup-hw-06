@@ -825,7 +825,7 @@ textarea::placeholder {
    margin: -1px;
 }
 
-.icon-checkbox {
+/* .icon-checkbox {
    position: absolute;
    top: 4px;
    left: 13px;
@@ -843,6 +843,10 @@ textarea::placeholder {
    background-origin: border-box;
 
    border-color: var(--action-color);
+} */
+
+.icon-check {
+   fill: blue;
 }
 .form-title.checkbox {
    display: inline;
