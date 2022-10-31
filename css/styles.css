@@ -174,7 +174,9 @@ img {
    text-transform: uppercase;
    color: var(--main-third-color);
 }
-.hero-btn {
+.hero-btn,
+.footer-btn,
+.modal-btn {
    padding: 10px 32px;
    border: none;
    font-family: inherit;
@@ -193,7 +195,11 @@ img {
    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
-.hero-btn:focus {
+.hero-btn:focus,
+.footer-btn:hover,
+.footer-btn:focus,
+.modal-btn:hover,
+.modal-btn:focus {
    background-color: var(--action-button-second-background);
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -477,6 +483,49 @@ img {
 .soc-link.soc-link-footer:focus {
    background-color: var(--action-color);
 }
+
+.footer-item:last-child {
+   margin-left: auto;
+   margin-right: 0px;
+}
+.form-footer {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+.form-footer-field {
+}
+.form-footer-input {
+   width: 358px;
+   height: 50px;
+   padding: 0px 16px;
+
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 1.25;
+   letter-spacing: 0.03em;
+
+   color: var(--main-third-color);
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   border-radius: 4px;
+   background-color: var(--hero-background);
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+   /* outline: none; */
+}
+.form-footer-input::placeholder {
+   color: var(--link-footer-color);
+}
+
+.form-footer-label {
+}
+.footer-btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+
+   padding: 10px 28px;
+}
 /* ----------------   Сторінка " Портфоліо (2-га сторінка)   ----------- "  */
 .header-portfolio {
    border-bottom: 1px solid #ececec;
@@ -630,6 +679,7 @@ img {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%) scale(1);
+   padding: 40px;
 
    min-width: 528px;
    min-height: 581px;
@@ -671,4 +721,151 @@ img {
 .button-close-modal:focus {
    background-color: var(--color-soc-icon);
    color: var(--action-second-color);
+}
+
+.modal-title {
+   margin-bottom: 12px;
+
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 1.15;
+   text-align: center;
+   letter-spacing: 0.03em;
+
+   color: var(--main-color);
+}
+.form-group {
+   margin-bottom: 20px;
+}
+.form-label {
+   display: block;
+   margin-bottom: 10px;
+}
+.form-group .form-label:last-child {
+   margin-bottom: 0px;
+}
+.form-title {
+   display: block;
+   margin-bottom: 4px;
+
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 1.17;
+   letter-spacing: 0.01em;
+
+   color: var(--main-second-color);
+}
+
+.input-box {
+   position: relative;
+}
+
+.form-input {
+   width: 100%;
+   height: 40px;
+   padding: 0px 42px;
+
+   border: 1px solid rgba(33, 33, 33, 0.2);
+   border-radius: 4px;
+   cursor: pointer;
+
+   outline: none;
+}
+.form-icon {
+   position: absolute;
+   top: 11px;
+   left: 12px;
+   cursor: pointer;
+}
+
+.form-input:focus-within {
+   border-color: var(--action-color);
+}
+.form-input:focus-within + .form-icon {
+   fill: var(--action-color);
+}
+
+textarea[name="user-text"] {
+   display: block;
+   width: 100%;
+   height: 120px;
+   padding: 12px 16px;
+
+   resize: none;
+
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 14px;
+   letter-spacing: 0.01em;
+}
+textarea::placeholder {
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 14px;
+   letter-spacing: 0.01em;
+
+   color: rgba(117, 117, 117, 0.5);
+}
+
+.form-label.checkbox {
+   position: relative;
+   margin-bottom: 30px;
+}
+
+.form-checkbox {
+   position: absolute;
+   white-space: nowrap;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   border: 0;
+   padding: 0;
+   clip: rect(0 0 0 0);
+   clip-path: inset(50%);
+   margin: -1px;
+}
+
+.icon-checkbox {
+   position: absolute;
+   top: 4px;
+   left: 13px;
+   display: inline-block;
+   width: 16px;
+   height: 15px;
+
+   border: 2px solid var(--main-color);
+   border-radius: 4px;
+}
+.form-checkbox:checked + .icon-checkbox {
+   background-color: var(--action-color);
+   background-image: url("../images/icon-check.svg");
+   background-size: contain;
+   background-origin: border-box;
+
+   border-color: var(--action-color);
+}
+.form-title.checkbox {
+   display: inline;
+   padding-left: 36px;
+
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 1.71;
+   letter-spacing: 0.03em;
+
+   color: var(--main-second-color);
+}
+
+.form-link {
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 1.71;
+   letter-spacing: 0.03em;
+
+   color: var(--action-color);
+}
+.modal-btn {
+   display: block;
+   padding: 10px 52px;
+   margin: 0px auto;
 }
