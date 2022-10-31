@@ -510,10 +510,15 @@ img {
    border-radius: 4px;
    background-color: var(--hero-background);
    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-   /* outline: none; */
+   outline: none;
+
+   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-footer-input::placeholder {
    color: var(--link-footer-color);
+}
+.form-footer-input:focus {
+   border-color: var(--action-color);
 }
 
 .form-footer-label {
@@ -711,7 +716,7 @@ img {
    background-color: var(--base-background);
    color: #000000;
 
-   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-close-modal {
    fill: currentColor;
@@ -719,8 +724,7 @@ img {
 
 .button-close-modal:hover,
 .button-close-modal:focus {
-   background-color: var(--color-soc-icon);
-   color: var(--action-second-color);
+   color: var(--action-color);
 }
 
 .modal-title {
@@ -770,12 +774,16 @@ img {
    cursor: pointer;
 
    outline: none;
+
+   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-icon {
    position: absolute;
    top: 11px;
    left: 12px;
    cursor: pointer;
+
+   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus-within {
@@ -824,6 +832,7 @@ textarea::placeholder {
    clip-path: inset(50%);
    margin: -1px;
 }
+/* Реалізація чекбокса через "background-image" */
 
 /* .icon-checkbox {
    position: absolute;
@@ -844,9 +853,18 @@ textarea::placeholder {
 
    border-color: var(--action-color);
 } */
-
+/* Кінець */
 .icon-check {
-   fill: blue;
+   position: absolute;
+   top: 4px;
+   left: 13px;
+   border: 2px solid var(--main-color);
+   border-radius: 3px;
+   overflow: hidden;
+}
+.form-checkbox:checked + .icon-check {
+   border: none;
+   background-color: var(--action-color);
 }
 .form-title.checkbox {
    display: inline;
